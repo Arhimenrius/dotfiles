@@ -84,3 +84,4 @@ m("n", "<leader>o", ":.GBrowse<cr>")
 
 -- nvim tree mappings
 m("", "<C-n>", ":NvimTreeToggle<cr>")
+

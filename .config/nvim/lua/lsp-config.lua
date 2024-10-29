@@ -9,7 +9,7 @@ local servers = {
 	"jsonls",
 	"bashls",
 	"vacuum",
-	"phpactor",
+	"intelephense",
 	"graphql",
 	"helm_ls",
 	"html",

@@ -18,8 +18,8 @@ cmp.setup({
 		{ name = "buffer" },
 	}),
 	mapping = {
-		["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item()),
-		["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item()),
+		["<Down>"] = cmp.mapping(cmp.mapping.select_next_item()),
+		["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item()),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 })
