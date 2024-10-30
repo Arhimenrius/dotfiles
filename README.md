@@ -1,8 +1,18 @@
 # My dotfiles
 
-## Required packages
+## Useful packages (depending on set of plugins/LSP)
 
-- cargo (from rust)
+### Ubuntu packages
+
+- cargo
 - php
-- [nvm](https://github.com/nvm-sh/nvm) / latest nodejs
-- `npm install -g typescript typescript-language-server` && ln -s /home/$USER/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript-language-server /home/$USER/.local/share/nvim/mason/typescript-language-server
+- ripgrep
+- golang
+- fd-find
+### Others
+
+#### NodeJS
+
+1. Install [**nvm**](https://github.com/nvm-sh/nvm), and then current LTS version of NodeJS (20 at the time of writing this README).
+2. Install `npm install -g typescript typescript-language-server`
+3. If Mason has problem to install typescript server, try: `ln -s /home/$USER/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript-language-server /home/$USER/.local/share/nvim/mason/typescript-language-server`

@@ -1,8 +1,4 @@
-require("vim-settings")
-require("plugins")
-require("lsp-config")
-require("keybindings")
-require("formatters")
-require("completion")
-require("scripts")
-
+require("config.options")
+require("config.lazy")
+require("config.autocmds")
+require("config.keymaps")
