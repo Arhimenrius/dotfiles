@@ -9,6 +9,15 @@ return {
       "jay-babu/mason-null-ls.nvim",
       "hrsh7th/cmp-nvim-lsp",
     },
+    keys = {
+      {"gd", function() vim.lsp.buf.definition() end, desc = "[G]o to [d]efinition"},
+      {"gr", function() vim.lsp.buf.definition() end, desc = "[G]o to [r]eference"},
+      {"gD", function() vim.lsp.buf.definition() end, desc = "[G]o to [D]declaration"},
+      {"K", function() vim.lsp.buf.definition() end, desc = "Show details of element (Hover)"},
+      {"<leader>e", function() vim.lsp.buf.definition() end, desc = "Open LSP Float"},
+      {"<leader>rn", function() vim.lsp.buf.definition() end, desc = "<leader> [r]e[n]ame"},
+      {"<lreader>ca", function() vim.lsp.buf.definition() end, desc = "<leader> [c]ode [a]ction"},
+    },
     config = function()
       local servers = {
         "gopls",

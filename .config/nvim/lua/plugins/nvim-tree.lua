@@ -2,6 +2,9 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      {"<C-n>", ":NvimTreeToogle<cr>", desc = "Toggle Nvimtree"}
+    },
     config = function() 
       require("nvim-tree").setup({
         filters = {custom = {'*.tmp', '.git'}},
@@ -20,7 +23,7 @@ return {
         renderer = {
           indent_markers = {enable = true, icons = {corner = "└ ", edge = "│ ", none = "  "}}
         }
-    })
+      })
     end,
   }
 }
