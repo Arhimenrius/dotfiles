@@ -15,5 +15,9 @@
 #### NodeJS
 
 1. Install [**nvm**](https://github.com/nvm-sh/nvm), and then current LTS version of NodeJS (20 at the time of writing this README).
-2. Install `npm install -g typescript typescript-language-server @vue/language-server @vue/typescript-plugin`
+2. Install `npm install -g typescript typescript-language-server
 3. If Mason has problem to install typescript server, try: `ln -s /home/$USER/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript-language-server /home/$USER/.local/share/nvim/mason/typescript-language-server`
+
+#### Vue project
+
+If developing Vue project, `@vue/language-server` and `@vue/typescript-plugin` packages must be added to dev dependencies of the project
