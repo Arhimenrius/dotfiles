@@ -12,9 +12,6 @@ return {
       "olimorris/neotest-phpunit",
 
     },
-    keys = {
-      {"<leader>ttv", function() require("neotest").summary.toggle() end, desc = "Toggle tests tab"},
-    },
     config = function()
       require("neotest").setup({
         adapters = {
