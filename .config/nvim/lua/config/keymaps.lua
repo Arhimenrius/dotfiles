@@ -22,7 +22,7 @@ vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, { desc = "[G
 vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { desc = "Show details of element (Hover)"})
 vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float() end, { desc = "Open LSP Float"})
 vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename(nil) end, { desc = "<leader> [r]e[n]ame"})
-vim.keymap.set("n", "<lreader>ca", function() vim.lsp.buf.code_action() end, { desc = "<leader> [c]ode [a]ction"})
+vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "<leader> [c]ode [a]ction"})
 
 vim.keymap.set("n", "<leader>ttv", function() require("neotest").summary.toggle() end, { desc = "Toggle tests tab"})
 
