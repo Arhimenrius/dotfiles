@@ -8,6 +8,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "jay-babu/mason-null-ls.nvim",
       "hrsh7th/cmp-nvim-lsp",
+      "SmiteshP/nvim-navic",
     },
     config = function()
       local servers = {
@@ -28,6 +29,7 @@ return {
         "pyright",
         "volar",
         "tailwindcss",
+        "lua_ls",
       }
 
       local extra_lsp_settings = {
@@ -49,7 +51,33 @@ return {
             },
           },
           filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-        }, 
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              runtime = {
+                -- Tell the language server which version of Lua you're using
+                -- (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+              },
+              diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {
+                  'vim',
+                  'require'
+                },
+              },
+              workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+              },
+              -- Do not send telemetry data containing a randomized but unique identifier
+              telemetry = {
+                enable = false,
+              },
+            },
+          },
+        }
       }
 
       local nvim_lsp = require("lspconfig")
@@ -122,25 +150,25 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    
-  config = function()
-    require("typescript-tools").setup({
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-      },
-      settings = {
-        tsserver_plugins = {
-          "@vue/typescript-plugin",
+
+    config = function()
+      require("typescript-tools").setup({
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "vue",
         },
-        separate_diagnostic_server = true,
-        publish_diagnostic_on = "insert_leave",
-      },
-    })
-  end,
+        settings = {
+          tsserver_plugins = {
+            "@vue/typescript-plugin",
+          },
+          separate_diagnostic_server = true,
+          publish_diagnostic_on = "insert_leave",
+        },
+      })
+    end,
   }
 }
 

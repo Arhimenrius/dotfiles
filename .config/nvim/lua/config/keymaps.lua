@@ -53,3 +53,6 @@ vim.api.nvim_set_keymap('n', '<F10>', [[:lua require"dap".step_over()<CR>]], { n
 vim.api.nvim_set_keymap('n', '<S-F10>', [[:lua require"dap".step_into()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F12>', [[:lua require"dap.ui.widgets".hover()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F5>', [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })
+
+-- Aerial
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
