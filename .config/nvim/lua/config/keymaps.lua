@@ -45,6 +45,7 @@ vim.keymap.set("n", "<leader>gb", ":Git blame<cr>", { desc = "Git blame" })
 vim.keymap.set("n", "<leader>gd", ":Git diff<cr>", { desc = "Git diff" })
 vim.keymap.set("n", "<leader>ga", ":Git add", { desc = "Git add" })
 vim.keymap.set("n", "<leader>gc", ":Git commit<cr>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gp", ":Git! push<cr>", { desc = "Git commit" })
 
 vim.api.nvim_set_keymap('n', '<F8>', [[:lua require"dap".toggle_breakpoint()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F9>', [[:lua require"dap".continue()<CR>]], { noremap = true })
