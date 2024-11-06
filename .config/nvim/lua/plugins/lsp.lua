@@ -13,7 +13,6 @@ return {
       local servers = {
         "gopls",
         "golangci_lint_ls",
-        "ts_ls",
         "cssls",
         "terraformls",
         "yamlls",
@@ -119,6 +118,29 @@ return {
         },
       })
     end
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    
+  config = function()
+    require("typescript-tools").setup({
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+      },
+      settings = {
+        tsserver_plugins = {
+          "@vue/typescript-plugin",
+        },
+        separate_diagnostic_server = true,
+        publish_diagnostic_on = "insert_leave",
+      },
+    })
+  end,
   }
 }
 

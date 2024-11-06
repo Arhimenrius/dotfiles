@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, { de
 
 vim.keymap.set("n", "<leader>ttv", function() require("neotest").summary.toggle() end, { desc = "Toggle tests tab"})
 
-vim.keymap.set("n", "<C-n>", ":NvimTreeToogle<cr>", { desc = "Toggle Nvimtree"})
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<cr>", { desc = "Toggle Nvimtree"})
 
 
 vim.keymap.set("n", "<leader>sh", function() require("telescope.builtin").help_tags() end, { desc = "[S]earch [H]elp" })
@@ -40,10 +40,15 @@ vim.keymap.set("n", "<leader>sr", function() require("telescope.builtin").resume
 vim.keymap.set("n", "<leader>s.", function() require("telescope.builtin").oldfiles() end, { desc = "[S]earch Recent Files (\".\" for repeat)" })
 vim.keymap.set("n", "<leader><leader>", function() require("telescope.builtin").buffers() end, { desc = "[ ] Find existing buffers" })
 
+-- Git (fugitive)
+vim.keymap.set("n", "<leader>gb", ":Git blame<cr>", { desc = "Git blame" })
+vim.keymap.set("n", "<leader>gd", ":Git diff<cr>", { desc = "Git diff" })
+vim.keymap.set("n", "<leader>ga", ":Git add", { desc = "Git add" })
+vim.keymap.set("n", "<leader>gc", ":Git commit<cr>", { desc = "Git commit" })
+
 vim.api.nvim_set_keymap('n', '<F8>', [[:lua require"dap".toggle_breakpoint()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F9>', [[:lua require"dap".continue()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F10>', [[:lua require"dap".step_over()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<S-F10>', [[:lua require"dap".step_into()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F12>', [[:lua require"dap.ui.widgets".hover()<CR>]], { noremap = true })
 vim.api.nvim_set_keymap('n', '<F5>', [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })
-
