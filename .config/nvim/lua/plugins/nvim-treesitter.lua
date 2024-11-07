@@ -2,7 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-      "nvim-dap-repl-highlights"
+      "LiadOz/nvim-dap-repl-highlights"
     },
     build = ":TSUpdate",
     config = function () 
