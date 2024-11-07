@@ -17,9 +17,9 @@ return {
   },
   -- html tags pairing
   {
-    "windwp/nvim-ts-autotag", 
-    config = function() 
-      require('nvim-ts-autotag').setup() 
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require('nvim-ts-autotag').setup()
     end
   },
   -- Git

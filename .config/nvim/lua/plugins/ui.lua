@@ -6,7 +6,7 @@ return {
       vim.cmd.colorscheme("darcula-dark")
     end,
   },
-  { 
+  {
     "nvim-lualine/lualine.nvim",
     config = function ()
       require("lualine").setup({
@@ -45,14 +45,14 @@ return {
           lualine_y = {},
           lualine_z = {}
         },
-        tabline = {
-          lualine_a = {'buffers'},
-          lualine_b = {'branch'},
-          lualine_c = {'filename'},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {'tabs'}
-        },
+        -- tabline = {
+        --   lualine_a = {'buffers'},
+        --   lualine_b = {'branch'},
+        --   lualine_c = {'filename'},
+        --   lualine_x = {},
+        --   lualine_y = {},
+        --   lualine_z = {'tabs'}
+        -- },
         winbar = {},
         inactive_winbar = {},
         extensions = {}
@@ -79,5 +79,32 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons"
     },
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+
+    config = function()
+      require("bufferline").setup({
+        options = {
+          indicator = {
+            icon = " ",
+          },
+          show_close_icon = false,
+          tab_size = 0,
+          max_name_length = 25,
+          offsets = {
+            {
+              filetype = "neo-tree",
+              text = "  Project",
+              highlight = "Directory",
+              text_align = "left",
+            },
+          },
+          modified_icon = "",
+        },
+      })
+    end,
   },
 }
